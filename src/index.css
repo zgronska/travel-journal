@@ -1,3 +1,5 @@
+/* Basic styling */
+
 :root {
   --salmon: #F55A5A;
   --dark-blue: #2B283A;
@@ -16,6 +18,7 @@ svg {
 
 body {
   margin: 0;
+  line-height: 1.5;
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,20 +35,31 @@ code {
     monospace;
 }
 
+/* Navbar */
+
 .navbar {
   background: var(--salmon);
+  color: #fff;
   display: flex;
   gap: 0.5em;
   justify-content: center;
   align-items: center;
-  color: #fff;
   padding-block: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 997;
+  box-shadow: 0 1px 1.5px rgba(171, 33, 33, 0),
+    0 1.5px 2.5px rgba(171, 33, 33, 0.1),
+    0 2px 3px rgba(171, 33, 33, 0.3);
+  ;
 }
 
 .page-title {
   font-size: 0.9rem;
   font-weight: 500;
 }
+
+/* Main content */
 
 .main-content {
   display: flex;
@@ -56,6 +70,8 @@ code {
   margin-inline: auto;
 }
 
+/* Travel cards */
+
 .card {
   display: flex;
   align-items: center;
@@ -63,19 +79,30 @@ code {
   font-size: 0.64rem;
 }
 
-.card .photo {
-  max-width: 8rem;
+.card > * {
+  flex: 1;
+}
+
+.card .photo-container {
+  overflow: hidden;
+  max-width: 10rem;
   border-radius: 5%;
+}
+
+.card .photo {
   aspect-ratio: 3 / 4;
   object-fit: cover;
+  transition: transform .5s ease;
+}
 
+.card .photo:hover {
+  transform: scale(1.2) rotate(3deg);
 }
 
 .card .content {
   display: flex;
   flex-direction: column;
   padding-left: 1.85em;
-
 }
 
 .card .location {
@@ -91,25 +118,24 @@ code {
 }
 
 .card .location .google-maps {
-  margin-left: 0.8em;
+  margin-left: auto;
   color: var(--grey);
 }
 
 .card .card-title {
-  font-size: 2.4em;
+  font-size: 2em;
   font-weight: 700;
   margin-block: 0.4em;
 }
 
-.card .date {
-  font-weight: 700;
-  margin-block: 0.9em;
-}
+/* Card divider */
 
 .divider {
   width: calc(100% - 4rem);
   border-top: 1px solid var(--light-grey);
 }
+
+/* Responsive layout */
 
 @media (min-width: 40rem) {
   .card {
@@ -117,9 +143,11 @@ code {
     font-size: 0.8rem;
   }
 
+  .card .photo-container {
+    max-width: 20rem
+  }
+
   .card .photo {
     aspect-ratio: 4 / 3;
-    max-width: 20rem;
-
   }
 }

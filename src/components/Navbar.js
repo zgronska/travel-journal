@@ -1,12 +1,12 @@
 import React from "react";
-import WorldIcon from "../assets/world-icon.svg";
+import { GiWorld } from "react-icons/gi";
 
 const Navbar = () => {
   const PageTitle = "my travel journal.";
 
   return (
     <nav className="navbar">
-      <img src={WorldIcon} alt="An icon of the Earth" />
+      <GiWorld />
       <h1 className="page-title">{PageTitle}</h1>
     </nav>
   );

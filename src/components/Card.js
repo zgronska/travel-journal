@@ -3,14 +3,19 @@ import PinIcon from "../assets/pin-icon.svg";
 
 const Card = (props) => {
   const searchTerm = props.title.replaceAll(` `, `+`);
-  console.log(props.title);
 
   return (
     <div className="card">
-      <img src={`../assets/${props.id}.jpg`} className="photo" />
+      <div className="photo-container">
+        <img
+          src={`../assets/${props.id}.jpg`}
+          className="photo"
+          alt={props.title}
+        />
+      </div>
       <div className="content">
         <div className="location">
-          <img src={PinIcon} />
+          <img src={PinIcon} aria-hidden="true" />
           <span className="country">{props.country}</span>
 
           <a
