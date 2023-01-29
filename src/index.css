@@ -57,6 +57,7 @@ code {
 .page-title {
   font-size: 0.9rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
 /* Main content */
@@ -108,7 +109,10 @@ code {
 .card .location {
   display: inline-flex;
   align-items: center;
+}
 
+.card .location .pin {
+  color: var(--salmon);
 }
 
 .card .location .country {

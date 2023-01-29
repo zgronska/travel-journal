@@ -6,8 +6,18 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <GiWorld />
-      <h1 className="page-title">{PageTitle}</h1>
+      <GiWorld style={{ fontSize: "1.5rem" }} />
+      <h1
+        className="page-title"
+        onClick={() =>
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          })
+        }>
+        {PageTitle}
+      </h1>
     </nav>
   );
 };
